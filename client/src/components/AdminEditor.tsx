@@ -2,8 +2,10 @@ import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Lock, X } from "lucide-react";
+import { Lock, X, Loader2 } from "lucide-react";
 import { useState } from "react";
+import { syncPatentToAll } from "@/lib/patentSync";
+import { toast } from "sonner";
 
 interface AdminEditorProps {
   isOpen: boolean;
@@ -45,16 +47,37 @@ export default function AdminEditor({
     }
   };
 
-  const handleSave = () => {
+  const [isSyncing, setIsSyncing] = useState(false);
+
+  const handleSave = async () => {
     const updatedPatent = {
       ...formData,
       features: features.split("\n").filter((f) => f.trim()),
       applications: applications.split("\n").filter((a) => a.trim()),
     };
-    onSave(updatedPatent);
-    setIsAuthenticated(false);
-    setAdminPassword("");
-    onClose();
+    
+    try {
+      setIsSyncing(true);
+      
+      // Save to local state first
+      onSave(updatedPatent);
+      
+      // Attempt to sync to GitHub and Google Drive
+      try {
+        await syncPatentToAll(updatedPatent);
+        toast.success(`Patent ${updatedPatent.patentNumber} synced to GitHub and Google Drive`);
+      } catch (syncError) {
+        // Sync failed but patent was saved locally
+        toast.warning(`Patent saved locally, but sync to GitHub/Drive failed. Check configuration.`);
+        console.error("Sync error:", syncError);
+      }
+      
+      setIsAuthenticated(false);
+      setAdminPassword("");
+      onClose();
+    } finally {
+      setIsSyncing(false);
+    }
   };
 
   if (!isCreator) {
@@ -300,9 +323,17 @@ export default function AdminEditor({
               </Button>
               <Button
                 onClick={handleSave}
-                className="bg-accent/20 border border-accent/50 text-accent hover:bg-accent/30"
+                disabled={isSyncing}
+                className="bg-accent/20 border border-accent/50 text-accent hover:bg-accent/30 disabled:opacity-50"
               >
-                Save Changes
+                {isSyncing ? (
+                  <>
+                    <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                    Syncing...
+                  </>
+                ) : (
+                  "Save Changes"
+                )}
               </Button>
             </div>
           </>
