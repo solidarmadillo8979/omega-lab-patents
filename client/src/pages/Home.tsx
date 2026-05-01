@@ -1,11 +1,12 @@
+import AdminEditor from "@/components/AdminEditor";
+import CollaborationModal from "@/components/CollaborationModal";
 import ImageGallery from "@/components/ImageGallery";
 import PatentCard from "@/components/PatentCard";
-import PatentEditor from "@/components/PatentEditor";
 import PatentDetail from "@/components/PatentDetail";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Badge } from "@/components/ui/badge";
-import { Edit2, Github, Search } from "lucide-react";
+import { Edit2, Github, Search, Users } from "lucide-react";
 import { useState } from "react";
 
 // Patent data with blueprint images
@@ -85,6 +86,8 @@ export default function Home() {
   const [editingPatent, setEditingPatent] = useState<(typeof INITIAL_PATENTS)[0] | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [filterCategory, setFilterCategory] = useState<string | null>(null);
+  const [showCollaboration, setShowCollaboration] = useState(false);
+  const [isCreator] = useState(true); // Set to true for creator, false for public
 
   // Filter patents based on search and category
   const filteredPatents = patents.filter((patent) => {
@@ -134,25 +137,23 @@ export default function Home() {
             <div className="inline-block">
               <div className="px-4 py-2 rounded-full border border-accent/30 bg-accent/10 backdrop-blur-sm">
                 <p className="text-xs font-mono text-accent tracking-widest">
-                  OMEGA LAB PATENT RESERVOIR
+                  SCIENTIST GEM | OMEGA PROTOCOL
                 </p>
               </div>
             </div>
 
             {/* Main Title */}
             <h1 className="text-6xl md:text-7xl font-bold leading-tight text-foreground">
-              Open-Source
+              Manifest Science
               <br />
-              <span className="text-accent">Scientific Discovery</span>
+              <span className="text-accent">for Humankind</span>
             </h1>
 
             {/* Subtitle */}
             <p className="text-lg md:text-xl text-foreground/80 max-w-2xl mx-auto leading-relaxed">
-              A collaborative repository for interdisciplinary inventions by{" "}
-              <span className="text-accent font-semibold">Prèneurs de Risques CORP</span>.
-              All patents are <span className="text-accent font-semibold">open-source</span> to
-              accelerate global scientific progress and enable the world to build
-              towards these discoveries.
+              An open-source repository grounded in elemental synthesis and
+              nomadic methodology. Neutral tools. Universal benefit. Rigorous
+              science. Practical manifestation.
             </p>
 
             {/* CTA */}
@@ -165,18 +166,24 @@ export default function Home() {
               </Button>
               <Button
                 size="lg"
-                variant="outline"
-                className="border-accent/30 text-accent hover:bg-accent/10"
+                onClick={() => setShowCollaboration(true)}
+                className="bg-accent/10 border border-accent/30 text-accent hover:bg-accent/20"
               >
-                <Github className="w-4 h-4 mr-2" />
-                View on GitHub
+                <Users className="w-4 h-4 mr-2" />
+                Join Collaboration
               </Button>
             </div>
 
-            {/* Open Source Badge */}
-            <div className="pt-8">
+            {/* Badges */}
+            <div className="pt-8 flex flex-wrap gap-3 justify-center">
               <Badge className="bg-accent/20 border border-accent/50 text-accent hover:bg-accent/30">
-                ⚡ Open Source • MIT License • Community Driven
+                ⚡ Open Source
+              </Badge>
+              <Badge className="bg-accent/20 border border-accent/50 text-accent hover:bg-accent/30">
+                🔬 Peer Reviewed
+              </Badge>
+              <Badge className="bg-accent/20 border border-accent/50 text-accent hover:bg-accent/30">
+                🌍 Community Driven
               </Badge>
             </div>
           </div>
@@ -220,9 +227,9 @@ export default function Home() {
               Patent Reservoir
             </h2>
             <p className="text-foreground/70 max-w-2xl mx-auto">
-              Explore open-source blueprints and technical documentation. Every
-              patent includes your original blueprint and AI-generated iterations
-              to accelerate collaborative development.
+              Open-source blueprints and technical documentation. Every patent
+              represents a synthesis of rigorous science and practical
+              manifestation for universal benefit.
             </p>
           </div>
 
@@ -285,14 +292,16 @@ export default function Home() {
                         {patent.title}
                       </h3>
                     </div>
-                    <Button
-                      size="sm"
-                      variant="outline"
-                      onClick={() => setEditingPatent(patent)}
-                      className="border-accent/30 text-accent hover:bg-accent/10"
-                    >
-                      <Edit2 className="w-4 h-4" />
-                    </Button>
+                    {isCreator && (
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        onClick={() => setEditingPatent(patent)}
+                        className="border-accent/30 text-accent hover:bg-accent/10"
+                      >
+                        <Edit2 className="w-4 h-4" />
+                      </Button>
+                    )}
                   </div>
 
                   {/* Blueprint Gallery */}
@@ -377,52 +386,129 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Open Source Section */}
+      {/* Scientist Gem Philosophy Section */}
       <section className="py-20 bg-card/30 border-t border-accent/10">
         <div className="container max-w-6xl mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Pillar 1 */}
+          <div className="text-center mb-12 space-y-4">
+            <h2 className="text-4xl font-bold text-foreground">
+              Scientist Gem | OMEGA
+            </h2>
+            <p className="text-foreground/70 max-w-2xl mx-auto">
+              Our framework integrates elemental synthesis, nomadic methodology,
+              and rigorous scientific practice for neutral utility and universal
+              benefit.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            {/* Pillar 1: Elemental */}
             <div className="space-y-4">
               <div className="w-12 h-12 rounded-lg bg-accent/20 border border-accent/30 flex items-center justify-center">
-                <span className="text-accent font-bold text-lg">◆</span>
+                <span className="text-accent font-bold text-lg">🔥</span>
               </div>
-              <h3 className="text-xl font-bold text-foreground">
-                Open Source
-              </h3>
-              <p className="text-foreground/70">
-                All patents are released under open-source licenses to enable
-                global collaboration and accelerate scientific discovery.
+              <h3 className="text-lg font-bold text-foreground">Elemental</h3>
+              <p className="text-sm text-foreground/70">
+                Synthesis of ancient knowledge with modern scientific rigor
               </p>
             </div>
 
-            {/* Pillar 2 */}
+            {/* Pillar 2: Nomadic */}
             <div className="space-y-4">
               <div className="w-12 h-12 rounded-lg bg-accent/20 border border-accent/30 flex items-center justify-center">
-                <span className="text-accent font-bold text-lg">◆</span>
+                <span className="text-accent font-bold text-lg">🎒</span>
               </div>
-              <h3 className="text-xl font-bold text-foreground">
-                Editable & Updatable
-              </h3>
-              <p className="text-foreground/70">
-                Update patent details as you refine designs and confirm
-                functionality. Your iterations are visible to the global
-                community.
+              <h3 className="text-lg font-bold text-foreground">Nomadic</h3>
+              <p className="text-sm text-foreground/70">
+                Portable, accessible science for all practitioners
               </p>
             </div>
 
-            {/* Pillar 3 */}
+            {/* Pillar 3: Open Source */}
             <div className="space-y-4">
               <div className="w-12 h-12 rounded-lg bg-accent/20 border border-accent/30 flex items-center justify-center">
-                <span className="text-accent font-bold text-lg">◆</span>
+                <span className="text-accent font-bold text-lg">⚡</span>
               </div>
-              <h3 className="text-xl font-bold text-foreground">
-                Blueprint Gallery
-              </h3>
-              <p className="text-foreground/70">
-                Your original blueprints plus AI-generated iterations provide
-                multiple perspectives for builders and researchers worldwide.
+              <h3 className="text-lg font-bold text-foreground">Open Source</h3>
+              <p className="text-sm text-foreground/70">
+                Knowledge shared freely for universal benefit
               </p>
             </div>
+
+            {/* Pillar 4: Neutral */}
+            <div className="space-y-4">
+              <div className="w-12 h-12 rounded-lg bg-accent/20 border border-accent/30 flex items-center justify-center">
+                <span className="text-accent font-bold text-lg">⚖️</span>
+              </div>
+              <h3 className="text-lg font-bold text-foreground">Neutral</h3>
+              <p className="text-sm text-foreground/70">
+                Tools for betterment, neither good nor bad, simply useful
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Collaboration Section */}
+      <section className="py-20 bg-background border-t border-accent/10">
+        <div className="container max-w-6xl mx-auto px-4">
+          <div className="text-center mb-12 space-y-4">
+            <h2 className="text-4xl font-bold text-foreground">
+              Join the Collective
+            </h2>
+            <p className="text-foreground/70 max-w-2xl mx-auto">
+              We seek like-minded researchers, builders, and visionaries to
+              collaborate on open-source scientific discovery.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Researchers */}
+            <div className="p-6 rounded-lg border border-accent/20 bg-card/30 space-y-4">
+              <div className="w-12 h-12 rounded-lg bg-accent/20 border border-accent/30 flex items-center justify-center">
+                <span className="text-accent font-bold text-lg">🔬</span>
+              </div>
+              <h3 className="text-lg font-bold text-foreground">Researchers</h3>
+              <p className="text-sm text-foreground/70">
+                Contribute experimental data, peer review, and theoretical
+                frameworks
+              </p>
+            </div>
+
+            {/* Builders */}
+            <div className="p-6 rounded-lg border border-accent/20 bg-card/30 space-y-4">
+              <div className="w-12 h-12 rounded-lg bg-accent/20 border border-accent/30 flex items-center justify-center">
+                <span className="text-accent font-bold text-lg">⚙️</span>
+              </div>
+              <h3 className="text-lg font-bold text-foreground">Builders</h3>
+              <p className="text-sm text-foreground/70">
+                Construct prototypes, refine designs, and share fabrication
+                techniques
+              </p>
+            </div>
+
+            {/* Philosophers */}
+            <div className="p-6 rounded-lg border border-accent/20 bg-card/30 space-y-4">
+              <div className="w-12 h-12 rounded-lg bg-accent/20 border border-accent/30 flex items-center justify-center">
+                <span className="text-accent font-bold text-lg">🧠</span>
+              </div>
+              <h3 className="text-lg font-bold text-foreground">Philosophers</h3>
+              <p className="text-sm text-foreground/70">
+                Explore implications, ethical frameworks, and interdisciplinary
+                synthesis
+              </p>
+            </div>
+          </div>
+
+          {/* CTA */}
+          <div className="mt-12 text-center">
+            <Button
+              size="lg"
+              onClick={() => setShowCollaboration(true)}
+              className="bg-accent/20 border border-accent/50 text-accent hover:bg-accent/30"
+            >
+              <Users className="w-4 h-4 mr-2" />
+              Express Your Interest
+            </Button>
           </div>
         </div>
       </section>
@@ -431,11 +517,11 @@ export default function Home() {
       <footer className="border-t border-accent/10 bg-background py-12">
         <div className="container max-w-6xl mx-auto px-4 text-center">
           <p className="text-foreground/60 text-sm">
-            © 2023 Prèneurs de Risques CORP. All patents released as open-source
-            to accelerate scientific discovery.
+            © 2023 Prèneurs de Risques CORP. Scientist Gem | OMEGA Protocol.
           </p>
           <p className="text-accent/50 text-xs mt-4 font-mono">
-            Omega Lab Patent Reservoir v2.0 • Open Source • MIT License
+            Open Source • MIT License • For the Betterment of Humankind and the
+            Universe
           </p>
         </div>
       </footer>
@@ -449,15 +535,22 @@ export default function Home() {
         />
       )}
 
-      {/* Patent Editor Modal */}
+      {/* Admin Editor Modal */}
       {editingPatent && (
-        <PatentEditor
+        <AdminEditor
           isOpen={!!editingPatent}
           onClose={() => setEditingPatent(null)}
           patent={editingPatent}
           onSave={handleSavePatent}
+          isCreator={isCreator}
         />
       )}
+
+      {/* Collaboration Modal */}
+      <CollaborationModal
+        isOpen={showCollaboration}
+        onClose={() => setShowCollaboration(false)}
+      />
     </div>
   );
 }
