@@ -30,7 +30,7 @@ The Nomad-Scientist represents a portable laboratory capable of manifesting scie
 
 | Element | Tool | Scientific Principle | Correspondence |
 |---------|------|----------------------|-----------------|
-| **Fire** | Plasma Lighter | Rapid Oxidation / Ionization | Transformation and Will |
+| **Fire** | Regular Lighter | Rapid Oxidation / Ionization | Transformation and Will |
 | **Earth** | Li-ion Battery | Chemical Energy Storage | Grounding and Potential |
 | **Air** | SDR Dongle (Software Defined Radio) | Electromagnetism / Waveform | Communication and Intellect |
 | **Water** | Refractometer / TDS Meter | Refraction / Solute Density | Intuition and Synthesis |
