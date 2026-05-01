@@ -92,7 +92,6 @@ A portable device designed for both meditative attunement and defensive pulse ge
 ```
 omega-lab-patents/
 ├── README.md                          # This file
-├── SYNC_SETUP.md                      # GitHub & Google Drive sync configuration
 ├── CONTRIBUTING.md                    # Contribution guidelines
 ├── LICENSE                            # MIT License
 │
@@ -104,13 +103,12 @@ omega-lab-patents/
 │   ├── src/
 │   │   ├── pages/                    # Page components
 │   │   ├── components/               # Reusable UI components
-│   │   ├── lib/                      # Utilities (patentSync.ts)
+│   │   ├── lib/                      # Utilities
 │   │   └── index.css                 # Global styles
 │   └── public/                        # Static assets
 │
 ├── server/                            # Backend Express server
-│   ├── routes/
-│   │   └── sync.ts                   # GitHub & Google Drive sync endpoints
+│   ├── routes/                        # API routes
 │   └── index.ts                       # Server entry point
 │
 └── package.json                       # Dependencies and scripts
@@ -157,22 +155,27 @@ pnpm preview
 
 ---
 
-## Patent Syncing
+## Features
 
-Patents can be automatically synced to GitHub and Google Drive whenever specifications are updated. This ensures:
+### Patent Gallery
+- Browse all open-source patents with full technical specifications
+- Swipeable blueprint galleries showing original designs and iterations
+- Detailed technical documentation and applications
 
-- **Distributed Documentation**: Specifications available across multiple platforms
-- **Audit Trail**: Complete history of patent updates and iterations
-- **Collaboration**: Easy access for contributors and researchers
-- **Backup**: Redundant storage of critical technical documentation
+### Creator Interface
+- Password-protected admin panel for patent updates
+- Edit and refine patent specifications as designs are validated
+- Track patent evolution and improvements
 
-### Configuration
+### Collaboration Network
+- Express interest in joining the Scientist Gem collective
+- Connect with researchers, builders, and philosophers
+- Contribute to advancing open-source scientific discovery
 
-See `SYNC_SETUP.md` for detailed instructions on:
-- Setting up GitHub Personal Access Token
-- Configuring Google Drive service account
-- Environment variable setup
-- Troubleshooting sync issues
+### Open-Source Emphasis
+- All patents released under MIT License
+- Full transparency on design and methodology
+- Encourage global participation and improvement
 
 ---
 
@@ -233,10 +236,11 @@ We are actively seeking like-minded individuals to join the Scientist Gem collec
 
 ### Join Us
 
-Visit the **Omega Lab Patent Reservoir** website to express your interest in collaboration:
-- https://omega-lab-patents.manus.space (when deployed)
-
-Or reach out directly with your background, expertise, and how you'd like to contribute.
+Express your interest in collaboration by:
+- Opening an issue with your background and expertise
+- Submitting a pull request with your contributions
+- Forking the repository and building on the work
+- Sharing your improvements with the community
 
 ---
 
@@ -275,14 +279,11 @@ The OMEGA Protocol is designed for **neutral utility**—tools and knowledge tha
 
 **Backend:**
 - Express.js for API server
-- GitHub API integration for sync
-- Google Drive API integration for sync
 - Node.js runtime
 
 **Deployment:**
 - Vite for build optimization
-- Static hosting ready
-- Full-stack deployment capable
+- Full-stack deployment ready
 
 ---
 
@@ -291,7 +292,6 @@ The OMEGA Protocol is designed for **neutral utility**—tools and knowledge tha
 ### Phase 1: Foundation ✅
 - [x] Core website and patent gallery
 - [x] Creator-only editing interface
-- [x] GitHub and Google Drive syncing
 - [x] Collaboration network setup
 - [x] Scientist Gem philosophy integration
 
@@ -320,13 +320,10 @@ The OMEGA Protocol is designed for **neutral utility**—tools and knowledge tha
 ## Resources
 
 ### Documentation
-- **SYNC_SETUP.md**: GitHub and Google Drive integration guide
 - **CONTRIBUTING.md**: Contribution guidelines and workflow
 - **patents/**: Individual patent specifications and blueprints
 
 ### External Resources
-- [GitHub API Documentation](https://docs.github.com/en/rest)
-- [Google Drive API Documentation](https://developers.google.com/drive/api)
 - [Open Source Hardware Association](https://www.oshwa.org/)
 - [MIT License](https://opensource.org/licenses/MIT)
 
@@ -391,7 +388,6 @@ Through open-source collaboration, rigorous methodology, and elemental synthesis
 
 ---
 
-**Last Updated**: May 1, 2026  
 **Repository**: https://github.com/solidarmadillo8979/omega-lab-patents  
 **License**: MIT  
 **Status**: Active Development
