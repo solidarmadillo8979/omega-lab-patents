@@ -111,3 +111,41 @@ temp/
 # Manus version file (auto-generated, not part of source)
 client/public/__manus__/version.json
 SYNC_SETUP.md
+
+# Secrets and keys (NEVER commit these)
+*.key
+*.pem
+*.p12
+*.pfx
+*.jks
+secrets/
+private/
+
+# Local lab notebooks (keep private)
+/lab_notebooks/
+/local_notes/
+/private_research/
+
+# Large files
+*.iso
+*.dmg
+*.zip
+*.rar
+*.7z
+*.tar.gz
+
+# Media files (if storing locally)
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.flv
+
+# Backup files
+*.backup
+*.bak
+*.old
+
+# OS temp files
+System Volume Information/
+$RECYCLE.BIN/
