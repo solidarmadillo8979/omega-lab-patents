@@ -51,7 +51,7 @@ The OMEGA Protocol draws from multiple knowledge systems:
 
 ### OL-2023-0814: Acousto-Resonant Biometric Attuner and Self-Defense Frequency Modulator
 
-**Status**: Open-Source | **License**: MIT | **Date**: August 14, 2023
+**Status**: Open-Source | **License**: MIT | **Date**: May 1, 2026
 
 A portable device designed for both meditative attunement and defensive pulse generation. The Acousto-Resonant Biometric Attuner (ARBA) reads and harmonizes with the unique resonant signature of an individual, converting biometric data into acoustic resonance for attuning systems, seals, and devices to the operator's identity.
 
