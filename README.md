@@ -1,6 +1,6 @@
 # Omega Lab Patent Reservoir
 
-**Scientist Gem | OMEGA Protocol**
+**THE OMEGA Protocol**
 
 > An open-source initiative for interdisciplinary scientific discovery, grounded in elemental synthesis, nomadic methodology, and practical manifestation for the betterment of humankind and the universe.
 
