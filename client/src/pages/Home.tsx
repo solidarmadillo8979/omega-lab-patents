@@ -14,7 +14,7 @@ const INITIAL_PATENTS = [
   {
     patentNumber: "OL-2023-0814",
     title: "Acousto-Resonant Biometric Attuner and Self-Defense Frequency Modulator",
-    inventor: "Prèneurs de Risques CORP",
+    inventor: "Frameworks Solutions",
     date: "AUGUST 14, 2023",
     description:
       "A portable device designed for both meditative attunement and defensive pulse generation. The Acousto-Resonant Biometric Attuner (ARBA) reads and harmonizes with the unique resonant signature of an individual, converting biometric data into acoustic resonance for attuning systems, seals, and devices to the operator's identity.",
@@ -517,7 +517,7 @@ export default function Home() {
       <footer className="border-t border-accent/10 bg-background py-12">
         <div className="container max-w-6xl mx-auto px-4 text-center">
           <p className="text-foreground/60 text-sm">
-            © 2023 Prèneurs de Risques CORP. Scientist Gem | OMEGA Protocol.
+            © 2023 Frameworks Solutions. Scientist Gem | OMEGA Protocol.
           </p>
           <p className="text-accent/50 text-xs mt-4 font-mono">
             Open Source • MIT License • For the Betterment of Humankind and the

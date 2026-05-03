@@ -1,7 +1,7 @@
 # OL-2023-0814: Acousto-Resonant Biometric Attuner and Self-Defense Frequency Modulator
 
 **Patent Number**: OL-2023-0814  
-**Inventor**: Prèneurs de Risques CORP  
+**Inventor**: Frameworks Solutions  
 **Date Filed**: August 14, 2023  
 **Status**: Open-Source (MIT License)  
 **Classification**: Acoustics, Biometrics, Frequency Modulation, Self-Defense Systems
@@ -384,7 +384,7 @@ If you reference or build upon this patent, please cite:
 
 ```
 OL-2023-0814: Acousto-Resonant Biometric Attuner and Self-Defense Frequency Modulator
-Prèneurs de Risques CORP
+Frameworks Solutions
 August 14, 2023
 https://github.com/solidarmadillo8979/omega-lab-patents/tree/main/patents/OL-2023-0814
 Licensed under MIT License

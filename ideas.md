@@ -1,7 +1,7 @@
 # Omega Lab Patent Reservoir - Design Brainstorming
 
 ## Project Context
-A professional digital repository for **Omega Lab Patents** by **Prèneurs de Risques CORP**, showcasing the **Acousto-Resonant Biometric Attuner** (OL-2023-0814) and establishing a framework for future interdisciplinary inventions. The design must convey scientific rigor, esoteric sophistication, and cutting-edge innovation while maintaining accessibility.
+A professional digital repository for **Omega Lab Patents** by **Frameworks Solutions**, showcasing the **Acousto-Resonant Biometric Attuner** (OL-2023-0814) and establishing a framework for future interdisciplinary inventions. The design must convey scientific rigor, esoteric sophistication, and cutting-edge innovation while maintaining accessibility.
 
 ---
 
