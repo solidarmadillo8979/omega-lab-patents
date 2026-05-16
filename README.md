@@ -42,7 +42,7 @@ The OMEGA Protocol draws from multiple knowledge systems:
 - **Acoustics & Resonance**: Studying frequency as a bridge between radio waves and ancient *Hekau* (Words of Power)
 - **Mesopotamian Alchemy**: Practical transmutation principles applied to modern materials science
 - **Shams al-Ma'arif**: Sacred geometry and correspondence systems informing device design
-- **Hoodoo/Voomagic**: Practical application of elemental theory and sympathetic resonance
+- **Certain Traditional Magics**: Practical application of elemental theory and sympathetic resonance
 - **Modern Physics**: Rigorous experimental methodology and peer review
 
 ---
