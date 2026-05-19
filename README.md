@@ -1,3 +1,7 @@
+**Find our Patent Reservoir Here!!**
+https://omegalabpat-ds28yntj.manus.space/
+
+
 # Omega Lab Patent Reservoir
 
 **THE OMEGA Protocol**
